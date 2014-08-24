@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PayQueueModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="PayQueueModelStoreContainer">
+          <EntitySet Name="auditconfigs" EntityType="PayQueueModel.Store.auditconfigs" store:Type="Tables" store:Schema="dbo" store:Name="auditconfigs">
+            <DefiningQuery>SELECT 
+      [auditconfigs].[AppId] AS [AppId], 
+      [auditconfigs].[AppName] AS [AppName]
+      FROM [dbo].[auditconfigs] AS [auditconfigs]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Payments" EntityType="PayQueueModel.Store.Payments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="unicastconfigs" EntityType="PayQueueModel.Store.unicastconfigs" store:Type="Tables" store:Schema="dbo" store:Name="unicastconfigs">
+            <DefiningQuery>SELECT 
+      [unicastconfigs].[AppId] AS [AppId], 
+      [unicastconfigs].[AppName] AS [AppName]
+      FROM [dbo].[unicastconfigs] AS [unicastconfigs]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PayQueue.dbo.auditconfigs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="auditconfigs">
+          <Key>
+            <PropertyRef Name="AppId" />
+          </Key>
+          <Property Name="AppId" Type="int" Nullable="false" />
+          <Property Name="AppName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Time" Type="varchar" MaxLength="50" />
+          <Property Name="Duration" Type="varchar" MaxLength="50" />
+          <Property Name="billerGroupId" Type="varchar" MaxLength="10" />
+          <Property Name="billerId" Type="varchar" MaxLength="10" />
+          <Property Name="bankRoutingNumber" Type="varchar" MaxLength="9" />
+          <Property Name="bankAccountNumber" Type="varchar" MaxLength="9" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" />
+          <Property Name="streetAddress1" Type="varchar" MaxLength="50" />
+          <Property Name="streetAddress2" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="state" Type="varchar" MaxLength="2" />
+          <Property Name="zip" Type="varchar" MaxLength="5" />
+          <Property Name="nameOnAccount" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="10" />
+          <Property Name="companyName" Type="varchar" MaxLength="50" />
+          <Property Name="paymentReferenceId" Type="uniqueidentifier" />
+          <Property Name="paymentChannel" Type="varchar" MaxLength="10" />
+          <Property Name="paymentAmount" Type="money" />
+          <Property Name="status" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PayQueue.dbo.unicastconfigs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="unicastconfigs">
+          <Key>
+            <PropertyRef Name="AppId" />
+          </Key>
+          <Property Name="AppId" Type="int" Nullable="false" />
+          <Property Name="AppName" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PayQueueModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PayQueueEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="auditconfigs" EntityType="PayQueueModel.auditconfig" />
+          <EntitySet Name="Payments" EntityType="PayQueueModel.Payment" />
+          <EntitySet Name="unicastconfigs" EntityType="PayQueueModel.unicastconfig" />
+        </EntityContainer>
+        <EntityType Name="auditconfig">
+          <Key>
+            <PropertyRef Name="AppId" />
+          </Key>
+          <Property Name="AppId" Type="Int32" Nullable="false" />
+          <Property Name="AppName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="Guid" Nullable="false" />
+          <Property Name="Time" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Duration" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="billerGroupId" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="billerId" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="bankRoutingNumber" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="bankAccountNumber" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="streetAddress1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="streetAddress2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="state" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="zip" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="nameOnAccount" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="companyName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="paymentReferenceId" Type="Guid" />
+          <Property Name="paymentChannel" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="paymentAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="status" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="unicastconfig">
+          <Key>
+            <PropertyRef Name="AppId" />
+          </Key>
+          <Property Name="AppId" Type="Int32" Nullable="false" />
+          <Property Name="AppName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PayQueueModelStoreContainer" CdmEntityContainer="PayQueueEntities">
+          <EntitySetMapping Name="auditconfigs">
+            <EntityTypeMapping TypeName="PayQueueModel.auditconfig">
+              <MappingFragment StoreEntitySet="auditconfigs">
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+                <ScalarProperty Name="AppName" ColumnName="AppName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="PayQueueModel.Payment">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="billerGroupId" ColumnName="billerGroupId" />
+                <ScalarProperty Name="billerId" ColumnName="billerId" />
+                <ScalarProperty Name="bankRoutingNumber" ColumnName="bankRoutingNumber" />
+                <ScalarProperty Name="bankAccountNumber" ColumnName="bankAccountNumber" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="streetAddress1" ColumnName="streetAddress1" />
+                <ScalarProperty Name="streetAddress2" ColumnName="streetAddress2" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="nameOnAccount" ColumnName="nameOnAccount" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="paymentReferenceId" ColumnName="paymentReferenceId" />
+                <ScalarProperty Name="paymentChannel" ColumnName="paymentChannel" />
+                <ScalarProperty Name="paymentAmount" ColumnName="paymentAmount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="unicastconfigs">
+            <EntityTypeMapping TypeName="PayQueueModel.unicastconfig">
+              <MappingFragment StoreEntitySet="unicastconfigs">
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+                <ScalarProperty Name="AppName" ColumnName="AppName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

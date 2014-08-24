@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PayQueueModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="PayQueueModelStoreContainer">
+    <EntitySet Name="auditconfigs" EntityType="PayQueueModel.Store.auditconfigs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Payments" EntityType="PayQueueModel.Store.Payments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="unicastconfigs" EntityType="PayQueueModel.Store.unicastconfigs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSreplication_options" EntityType="PayQueueModel.Store.MSreplication_options" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="spt_fallback_db" EntityType="PayQueueModel.Store.spt_fallback_db" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="spt_fallback_dev" EntityType="PayQueueModel.Store.spt_fallback_dev" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="spt_fallback_usg" EntityType="PayQueueModel.Store.spt_fallback_usg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="spt_monitor" EntityType="PayQueueModel.Store.spt_monitor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AppForReadinXML" EntityType="PayQueueModel.Store.AppForReadinXML" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="auditconfigs">
+    <Key>
+      <PropertyRef Name="AppId" />
+    </Key>
+    <Property Name="AppId" Type="int" Nullable="false" />
+    <Property Name="AppName" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Time" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Duration" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="billerGroupId" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="billerId" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="bankRoutingNumber" Type="varchar" Nullable="true" MaxLength="9" />
+    <Property Name="bankAccountNumber" Type="varchar" Nullable="true" MaxLength="9" />
+    <Property Name="firstName" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="lastName" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="streetAddress1" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="streetAddress2" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="city" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="state" Type="varchar" Nullable="true" MaxLength="2" />
+    <Property Name="zip" Type="varchar" Nullable="true" MaxLength="5" />
+    <Property Name="nameOnAccount" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="phone" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="companyName" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="paymentReferenceId" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="paymentChannel" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="paymentAmount" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="unicastconfigs">
+    <Key>
+      <PropertyRef Name="AppId" />
+    </Key>
+    <Property Name="AppId" Type="int" Nullable="false" />
+    <Property Name="AppName" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MSreplication_options">
+    <Key>
+      <PropertyRef Name="optname" />
+      <PropertyRef Name="value" />
+      <PropertyRef Name="major_version" />
+      <PropertyRef Name="minor_version" />
+      <PropertyRef Name="revision" />
+      <PropertyRef Name="install_failures" />
+    </Key>
+    <Property Name="optname" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="value" Type="bit" Nullable="false" />
+    <Property Name="major_version" Type="int" Nullable="false" />
+    <Property Name="minor_version" Type="int" Nullable="false" />
+    <Property Name="revision" Type="int" Nullable="false" />
+    <Property Name="install_failures" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_fallback_db">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="dbid" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="version" />
+    </Key>
+    <Property Name="xserver_name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+    <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+    <Property Name="xfallback_dbid" Type="smallint" Nullable="true" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="dbid" Type="smallint" Nullable="false" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="version" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_fallback_dev">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="low" />
+      <PropertyRef Name="high" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="phyname" />
+    </Key>
+    <Property Name="xserver_name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+    <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+    <Property Name="xfallback_low" Type="int" Nullable="true" />
+    <Property Name="xfallback_drive" Type="char" Nullable="true" MaxLength="2" />
+    <Property Name="low" Type="int" Nullable="false" />
+    <Property Name="high" Type="int" Nullable="false" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="phyname" Type="varchar" Nullable="false" MaxLength="127" />
+  </EntityType>
+  <EntityType Name="spt_fallback_usg">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="dbid" />
+      <PropertyRef Name="segmap" />
+      <PropertyRef Name="lstart" />
+      <PropertyRef Name="sizepg" />
+      <PropertyRef Name="vstart" />
+    </Key>
+    <Property Name="xserver_name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+    <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+    <Property Name="xfallback_vstart" Type="int" Nullable="true" />
+    <Property Name="dbid" Type="smallint" Nullable="false" />
+    <Property Name="segmap" Type="int" Nullable="false" />
+    <Property Name="lstart" Type="int" Nullable="false" />
+    <Property Name="sizepg" Type="int" Nullable="false" />
+    <Property Name="vstart" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_monitor">
+    <Key>
+      <PropertyRef Name="lastrun" />
+      <PropertyRef Name="cpu_busy" />
+      <PropertyRef Name="io_busy" />
+      <PropertyRef Name="idle" />
+      <PropertyRef Name="pack_received" />
+      <PropertyRef Name="pack_sent" />
+      <PropertyRef Name="connections" />
+      <PropertyRef Name="pack_errors" />
+      <PropertyRef Name="total_read" />
+      <PropertyRef Name="total_write" />
+      <PropertyRef Name="total_errors" />
+    </Key>
+    <Property Name="lastrun" Type="datetime" Nullable="false" />
+    <Property Name="cpu_busy" Type="int" Nullable="false" />
+    <Property Name="io_busy" Type="int" Nullable="false" />
+    <Property Name="idle" Type="int" Nullable="false" />
+    <Property Name="pack_received" Type="int" Nullable="false" />
+    <Property Name="pack_sent" Type="int" Nullable="false" />
+    <Property Name="connections" Type="int" Nullable="false" />
+    <Property Name="pack_errors" Type="int" Nullable="false" />
+    <Property Name="total_read" Type="int" Nullable="false" />
+    <Property Name="total_write" Type="int" Nullable="false" />
+    <Property Name="total_errors" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AppForReadinXML">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Recoverable" />
+      <PropertyRef Name="RowVersion" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CorrelationId" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="ReplyToAddress" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Recoverable" Type="bit" Nullable="false" />
+    <Property Name="Expires" Type="datetime" Nullable="true" />
+    <Property Name="Headers" Type="varchar(max)" Nullable="false" />
+    <Property Name="Body" Type="varbinary(max)" Nullable="true" />
+    <Property Name="RowVersion" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+</Schema>

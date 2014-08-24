@@ -1,0 +1,17 @@
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\PayQueue.exe.config
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\PayQueue.exe
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\PayQueue.pdb
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\MyMessages.exe
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\NServiceBus.Core.dll
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\NServiceBus.dll
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\NServiceBus.Host.exe
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\MyMessages.pdb
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\NServiceBus.pdb
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\NServiceBus.xml
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\NServiceBus.Core.pdb
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\NServiceBus.Core.xml
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\NServiceBus.Host.pdb
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\bin\Debug\NServiceBus.Host.xml
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\obj\Debug\PayQueue.csprojResolveAssemblyReference.cache
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\obj\Debug\PayQueue.exe
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\PayQueue\obj\Debug\PayQueue.pdb

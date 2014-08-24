@@ -1,0 +1,15 @@
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\AppForReadingTables.exe.config
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\AppForReadingTables.exe
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\AppForReadingTables.pdb
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\EntityFramework.dll
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\EntityFramework.SqlServer.dll
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\MyMessages.exe
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\NServiceBus.dll
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\MyMessages.pdb
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\EntityFramework.xml
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\EntityFramework.SqlServer.xml
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\NServiceBus.pdb
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\bin\Debug\NServiceBus.xml
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\obj\Debug\AppForReadingTables.csprojResolveAssemblyReference.cache
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\obj\Debug\AppForReadingTables.exe
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForReadingTables\obj\Debug\AppForReadingTables.pdb

@@ -1,0 +1,5 @@
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForSubmittingRequests\bin\Debug\AppForSubmittingRequests.exe.config
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForSubmittingRequests\bin\Debug\AppForSubmittingRequests.exe
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForSubmittingRequests\bin\Debug\AppForSubmittingRequests.pdb
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForSubmittingRequests\obj\Debug\AppForSubmittingRequests.exe
+C:\3816EN_Chap04\PayQueueMSMQ\PayQueue\AppForSubmittingRequests\obj\Debug\AppForSubmittingRequests.pdb

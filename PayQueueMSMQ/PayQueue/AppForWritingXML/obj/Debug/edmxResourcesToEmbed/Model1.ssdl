@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PayQueueModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="PayQueueModelStoreContainer">
+    <EntitySet Name="auditconfigs" EntityType="PayQueueModel.Store.auditconfigs" store:Type="Tables" store:Schema="dbo" store:Name="auditconfigs">
+      <DefiningQuery>SELECT 
+      [auditconfigs].[AppId] AS [AppId], 
+      [auditconfigs].[AppName] AS [AppName]
+      FROM [dbo].[auditconfigs] AS [auditconfigs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Payments" EntityType="PayQueueModel.Store.Payments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="unicastconfigs" EntityType="PayQueueModel.Store.unicastconfigs" store:Type="Tables" store:Schema="dbo" store:Name="unicastconfigs">
+      <DefiningQuery>SELECT 
+      [unicastconfigs].[AppId] AS [AppId], 
+      [unicastconfigs].[AppName] AS [AppName]
+      FROM [dbo].[unicastconfigs] AS [unicastconfigs]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'PayQueue.dbo.auditconfigs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="auditconfigs">
+    <Key>
+      <PropertyRef Name="AppId" />
+    </Key>
+    <Property Name="AppId" Type="int" Nullable="false" />
+    <Property Name="AppName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Time" Type="varchar" MaxLength="50" />
+    <Property Name="Duration" Type="varchar" MaxLength="50" />
+    <Property Name="billerGroupId" Type="varchar" MaxLength="10" />
+    <Property Name="billerId" Type="varchar" MaxLength="10" />
+    <Property Name="bankRoutingNumber" Type="varchar" MaxLength="9" />
+    <Property Name="bankAccountNumber" Type="varchar" MaxLength="9" />
+    <Property Name="firstName" Type="varchar" MaxLength="50" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" />
+    <Property Name="streetAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="streetAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="state" Type="varchar" MaxLength="2" />
+    <Property Name="zip" Type="varchar" MaxLength="5" />
+    <Property Name="nameOnAccount" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="10" />
+    <Property Name="companyName" Type="varchar" MaxLength="50" />
+    <Property Name="paymentReferenceId" Type="varchar" MaxLength="50" />
+    <Property Name="paymentChannel" Type="varchar" MaxLength="10" />
+    <Property Name="paymentAmount" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'PayQueue.dbo.unicastconfigs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="unicastconfigs">
+    <Key>
+      <PropertyRef Name="AppId" />
+    </Key>
+    <Property Name="AppId" Type="int" Nullable="false" />
+    <Property Name="AppName" Type="varchar" MaxLength="50" />
+  </EntityType>
+</Schema>

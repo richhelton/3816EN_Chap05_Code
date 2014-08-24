@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PayQueueModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PayQueueEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="auditconfigs" EntityType="PayQueueModel.auditconfig" />
+    <EntitySet Name="Payments" EntityType="PayQueueModel.Payment" />
+    <EntitySet Name="unicastconfigs" EntityType="PayQueueModel.unicastconfig" />
+  </EntityContainer>
+  <EntityType Name="auditconfig">
+    <Key>
+      <PropertyRef Name="AppId" />
+    </Key>
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <Property Name="AppName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="Guid" Nullable="false" />
+    <Property Name="Time" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Duration" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="billerGroupId" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="billerId" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="bankRoutingNumber" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+    <Property Name="bankAccountNumber" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="streetAddress1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="streetAddress2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="state" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="zip" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="nameOnAccount" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="phone" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="companyName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="paymentReferenceId" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="paymentChannel" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="paymentAmount" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="unicastconfig">
+    <Key>
+      <PropertyRef Name="AppId" />
+    </Key>
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <Property Name="AppName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>

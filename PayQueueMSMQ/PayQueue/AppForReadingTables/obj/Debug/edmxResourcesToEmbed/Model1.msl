@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PayQueueModelStoreContainer" CdmEntityContainer="PayQueueEntities">
+    <EntitySetMapping Name="auditconfigs">
+      <EntityTypeMapping TypeName="PayQueueModel.auditconfig">
+        <MappingFragment StoreEntitySet="auditconfigs">
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="AppName" ColumnName="AppName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="PayQueueModel.Payment">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="billerGroupId" ColumnName="billerGroupId" />
+          <ScalarProperty Name="billerId" ColumnName="billerId" />
+          <ScalarProperty Name="bankRoutingNumber" ColumnName="bankRoutingNumber" />
+          <ScalarProperty Name="bankAccountNumber" ColumnName="bankAccountNumber" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="streetAddress1" ColumnName="streetAddress1" />
+          <ScalarProperty Name="streetAddress2" ColumnName="streetAddress2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="nameOnAccount" ColumnName="nameOnAccount" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="paymentReferenceId" ColumnName="paymentReferenceId" />
+          <ScalarProperty Name="paymentChannel" ColumnName="paymentChannel" />
+          <ScalarProperty Name="paymentAmount" ColumnName="paymentAmount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unicastconfigs">
+      <EntityTypeMapping TypeName="PayQueueModel.unicastconfig">
+        <MappingFragment StoreEntitySet="unicastconfigs">
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="AppName" ColumnName="AppName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
